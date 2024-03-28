@@ -16,6 +16,16 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+
+
+
+//fire a function after saving a doc 
+userSchema.post('save' , (doc , next)=>{
+  console.log("new user created " , doc); 
+  next(); 
+}); 
+
+
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;
