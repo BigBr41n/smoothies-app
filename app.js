@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config(); 
+const AuthRoutes = require('./routes/authRoutes'); 
 
 const app = express();
 
@@ -22,6 +23,7 @@ db.once("open" , ()=> console.log("db connected"));
 // routes
 app.get('/', (req, res) => res.render('home'));
 app.get('/smoothies', (req, res) => res.render('smoothies'));
+app.use("/" , AuthRoutes); 
 
 
 //handlling any other routes that does not exist 

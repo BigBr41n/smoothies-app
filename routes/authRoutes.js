@@ -15,4 +15,4 @@ router.post('/login' , authController.loginPost);
 
 
 
-module.exports = {router}; 
+module.exports = router; 
