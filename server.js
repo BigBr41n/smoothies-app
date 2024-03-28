@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 4000 ;
 
 
 
-server.listen(PORT, ()=>{
+server.listen(PORT,'0.0.0.0' , ()=>{
     console.log(`listen on : ${PORT}`); 
 })
+
+
+server.keepAliveTimeout = 120000; // 2 minutes
+server.headersTimeout = 120000; // 2 minutes
