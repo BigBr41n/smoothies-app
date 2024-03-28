@@ -1,6 +1,8 @@
 //import the user model 
 const User = require('../models/User'); 
 const bcrypt = require('bcrypt'); 
+const jwt = require('jsonwebtoken');
+require('dotenv').config(); 
 
 
 
@@ -30,8 +32,13 @@ const handleErrors = (err) => {
 
 
 
+const maxAge = 3 * 24 * 60 * 60 ; // 3days
 
-
+const createToken = (id)=>{
+    return jwt.sign({ id } , process.env.JWT_SECRET , {
+        expiresIn : maxAge , 
+    }); 
+}
 
 
 
@@ -57,8 +64,13 @@ module.exports.signUpPost = async (req, res) => {
             password: hashedPass, 
         }); 
         await user.save(); 
+        const token = createToken(user._id); 
 
-        res.status(201).json(user); 
+
+        res.cookie('jwt' , token , {httpOnly : true , maxAge : maxAge*1000}); 
+        res.status(201).json({user : user._id}); 
+
+        
     } catch (error) {
         const errors = handleErrors(error);
         res.status(400).json({ errors }); 
