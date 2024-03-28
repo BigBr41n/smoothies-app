@@ -12,32 +12,32 @@ This is a web application for creating and managing smoothie recipes. Users can 
 
 ## File Structure
 
-.
-├── .env                          # Environment configuration file
-├── .gitignore                    # Git ignore file
-├── app.js                        # Main application file
-├── controllers
-│   └── authController.js         # Controller for authentication routes
-├── middleware
-│   └── authMiddleware.js         # Middleware for authentication
-├── models
-│   └── User.js                   # User model
-├── package-lock.json             # Auto-generated npm package lock file
-├── package.json                  # npm package configuration file
-├── public
-│   ├── smoothie.png              # Smoothie image
-│   └── styles.css                # CSS styles file
-├── routes
-│   └── authRoutes.js             # Authentication routes
-├── server.js                     # Server configuration file
-└── views
-    ├── home.ejs                  # Homepage view
-    ├── login.ejs                 # Login page view
-    ├── partials
-    │   ├── footer.ejs           # Footer partial
-    │   └── header.ejs           # Header partial
-    ├── signup.ejs                # Signup page view
-    └── smoothies.ejs             # Smoothie recipes view
+
+- .env
+- .gitignore
+- app.js
+- controllers
+  - authController.js
+- middleware
+  - authMiddleware.js
+- models
+  - User.js
+- package-lock.json
+- package.json
+- public
+  - smoothie.png
+  - styles.css
+- routes
+  - authRoutes.js
+- server.js
+- views
+  - home.ejs
+  - login.ejs
+  - partials
+    - footer.ejs
+    - header.ejs
+  - signup.ejs
+  - smoothies.ejs
 
 
 
