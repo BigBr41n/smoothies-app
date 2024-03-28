@@ -26,7 +26,7 @@ db.once("open" , ()=> console.log("db connected"));
 
 
 // routes
-app.get('/', (req, res) => res.render('home'));
+app.get('/', requireAuth, (req, res) => res.render('home'));
 app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
 app.use("/" , AuthRoutes); 
 
