@@ -70,7 +70,7 @@ module.exports.signUpPost = async (req, res) => {
         res.cookie('jwt' , token , {httpOnly : true , maxAge : maxAge*1000}); 
         res.status(201).json({user : user._id}); 
 
-        
+
     } catch (error) {
         const errors = handleErrors(error);
         res.status(400).json({ errors }); 
@@ -87,7 +87,13 @@ module.exports.loginGet = (req,res) =>{
 }; 
 
 
-module.exports.loginPost = (req,res) =>{
-    res.send("user login");  
+module.exports.loginPost = async (req,res) =>{
+    try {
+        const {email , password} = req.body ; 
+        const user = await User.login(email , password); 
+        res.status(200).json({userId : user._id}); 
+    } catch (error) {
+        res.status(400).json({})
+    }
 }; 
 
