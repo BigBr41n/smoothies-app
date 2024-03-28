@@ -1,0 +1,25 @@
+- .env
+- .gitignore
+- app.js
+- controllers
+  - authController.js
+- middleware
+  - authMiddleware.js
+- models
+  - User.js
+- package-lock.json
+- package.json
+- public
+  - smoothie.png
+  - styles.css
+- routes
+  - authRoutes.js
+- server.js
+- views
+  - home.ejs
+  - login.ejs
+  - partials
+    - footer.ejs
+    - header.ejs
+  - singup.ejs
+  - smoothies.ejs
