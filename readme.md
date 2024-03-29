@@ -1,7 +1,7 @@
 # Smoothie Maker Web App
 
 
-[Smoothie Maker Web App](https://smoothies-app-jwt.onrender.com)
+[Smoothie Maker Web App](https://hollo-smoothies.cyclic.app)
 
 
 ## Overview
